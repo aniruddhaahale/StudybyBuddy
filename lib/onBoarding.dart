@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studybybuddy/ShapeGame.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -220,9 +221,7 @@ class _DetailState extends State<BoyDetail> {
                     children: [
                       const CircleAvatar(
                         radius: 60,
-                        backgroundImage: NetworkImage(
-                          'https://thumbs.dreamstime.com/b/cute-boy-face-cartoon-vector-illustration-graphic-design-cute-boy-face-cartoon-110656400.jpg',
-                        ),
+                        backgroundImage:AssetImage('assets/images/boy.png')
                       ),
                       Positioned(
                         right: 0,
@@ -256,16 +255,18 @@ class _DetailState extends State<BoyDetail> {
                         ),
                       ],
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: '',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Enter your name',
+                          hintStyle: const TextStyle(color: Colors.grey,fontSize: 20,letterSpacing: 1),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 16),
                         ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 16),
                       ),
                     ),
                   ),
@@ -320,7 +321,7 @@ class _DetailState extends State<BoyDetail> {
                   const SizedBox(height: 100),
                   ElevatedButton(
                     onPressed: () {
-                      // Handle "Next" action
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ShapeGame()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightBlueAccent,
@@ -383,8 +384,7 @@ class _GirlDetailState extends State<GirlDetail> {
               children: [
                 const CircleAvatar(
                   radius: 60,
-                  backgroundImage: NetworkImage(
-                      'https://media.istockphoto.com/id/923968758/vector/beautiful-girl-face-cartoon.jpg?s=612x612&w=0&k=20&c=MG-ytYXUPjHsNhXszKRRWBBIZsaKLYlpUE-ZujWswiU='),
+                  backgroundImage:AssetImage('assets/images/girl.png'),
                 ),
                 Positioned(
                   right: 0,
@@ -443,7 +443,7 @@ class _GirlDetailState extends State<GirlDetail> {
               height: 80,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 9, // Age range from 4 to 12
+                itemCount: 9,
                 itemBuilder: (context, index) {
                   int age = index + 4; // Start from age 4
                   return GestureDetector(
@@ -479,7 +479,7 @@ class _GirlDetailState extends State<GirlDetail> {
             const SizedBox(height: 100),
             ElevatedButton(
               onPressed: () {
-                // Handle "Next" action
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ShapeGame()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.pinkAccent,
