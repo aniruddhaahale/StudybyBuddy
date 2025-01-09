@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studybybuddy/Number.dart';
 import 'package:studybybuddy/ShapeGame.dart';
 import 'package:studybybuddy/onBoarding.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ShapeGame(),
+      home: NumberGame(),
     );
   }
 }
